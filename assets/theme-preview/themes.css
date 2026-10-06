@@ -1,0 +1,169 @@
+/*
+ * Theme preview (dev server only; see theme-preview.js). Each option is a
+ * data-* attribute on <html> that overrides the variables in style.css.
+ * Once a combination is chosen, fold it into :root in style.css and delete
+ * this folder. Every palette is checked against WCAG 2.2 AA, the same pairs
+ * as the current one: text/bg ≥ 6.5, accent/bg ≥ 5.7, accent/tint ≥ 5.2,
+ * white/accent ≥ 6.1, footer-text/heading ≥ 11.2, focus-on-dark/heading ≥ 8.2.
+ */
+
+/* Fonts (SIL Open Font License, latin subset, which covers Portuguese). */
+@font-face { font-family: "Cormorant Garamond"; src: url("fonts/cormorant-garamond.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("fonts/eb-garamond.woff2") format("woff2"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("fonts/lora.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("fonts/lora-italic.woff2") format("woff2"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Libre Baskerville"; src: url("fonts/libre-baskerville-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Libre Baskerville"; src: url("fonts/libre-baskerville-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/source-sans-3.woff2") format("woff2"); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+/* ── Palettes ─────────────────────────────────────────────── */
+html[data-palette="violeta"] {
+  --accent: #5a3d6b; --accent-dark: #462e54; --accent-tint: #f1ebf3;
+  --heading: #2a1f33; --text: #5a5560; --line: #e9e3e6; --soft: #f5f0f2;
+  --bg: #fcfaf8; --footer-text: #efe8ee; --focus-on-dark: #d9c4e6;
+}
+html[data-palette="linho"] {
+  --accent: #9a4a2e; --accent-dark: #7a3a24; --accent-tint: #f6e9e2;
+  --heading: #1f2a3a; --text: #585450; --line: #e8e1d8; --soft: #f3ede4;
+  --bg: #faf7f2; --footer-text: #ece6dd; --focus-on-dark: #f0b9a3;
+}
+html[data-palette="salvia"] {
+  --accent: #4a6656; --accent-dark: #3a5244; --accent-tint: #e6eee8;
+  --heading: #26302b; --text: #545b56; --line: #e2e5df; --soft: #eff2ec;
+  --bg: #f9f8f4; --footer-text: #e6ebe5; --focus-on-dark: #b9d4c3;
+}
+html[data-palette="marinho"] {
+  --accent: #1f3a5f; --accent-dark: #142a47; --accent-tint: #e5ebf3;
+  --heading: #15233a; --text: #4f5866; --line: #e4e2dc; --soft: #f2f0ea;
+  --bg: #fbfaf7; --footer-text: #e8e6df; --focus-on-dark: #e3c27a;
+  --detail: #b8923a; /* warm gold, decorative only (never text) */
+}
+html[data-palette="rosa"] {
+  --accent: #8e4b5a; --accent-dark: #713a47; --accent-tint: #f5e8eb;
+  --heading: #3a2a2e; --text: #5e5458; --line: #ece2e2; --soft: #f6efee;
+  --bg: #fcf9f8; --footer-text: #f1e8e9; --focus-on-dark: #f0bccb;
+}
+
+/* ── Heading font ─────────────────────────────────────────── */
+html[data-heading="cormorant"]   { --font-heading: "Cormorant Garamond", Garamond, Georgia, serif; }
+html[data-heading="eb-garamond"] { --font-heading: "EB Garamond", Garamond, Georgia, serif; }
+html[data-heading="lora"]        { --font-heading: "Lora", Georgia, serif; }
+html[data-heading="baskerville"] { --font-heading: "Libre Baskerville", Baskerville, Georgia, serif; }
+/* Serifs read heavy at 700; Cormorant also runs small, so size it up. */
+html[data-heading]:not([data-heading="sistema"]) :is(h1, h2, h3) { font-weight: 600; }
+html[data-heading="baskerville"] :is(h1, h2, h3) { font-weight: 700; }
+html[data-heading="cormorant"] h1 { font-size: clamp(2.4rem, 7vw, 3.3rem); }
+html[data-heading="cormorant"] h2 { font-size: clamp(1.7rem, 4.6vw, 2.1rem); }
+html[data-heading="cormorant"] h3 { font-size: 1.4rem; }
+
+/* ── Body font ────────────────────────────────────────────── */
+html[data-body="source-sans"] { --font: "Source Sans 3", system-ui, sans-serif; }
+html[data-body="inter"]       { --font: "Inter", system-ui, sans-serif; }
+html[data-body="lora"]        { --font: "Lora", Georgia, serif; }
+html[data-body="lora"] body   { font-size: 1.03rem; }
+
+/* ── Corners ──────────────────────────────────────────────── */
+html[data-shape="discreto"] { --radius: 4px; --radius-sm: 3px; --radius-pill: 4px; }
+html[data-shape="reto"]     { --radius: 0; --radius-sm: 0; --radius-pill: 0; }
+
+/* ── Style: "clássico" = rules and white space instead of tinted cards ── */
+html[data-style="classico"] .site-header { border-bottom: 1px solid var(--line); }
+html[data-style="classico"] .site-nav a {
+  border-radius: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+html[data-style="classico"] .site-nav a:hover { background: none; text-decoration: underline; }
+html[data-style="classico"] .site-nav a[aria-current="page"] {
+  background: none;
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+html[data-style="classico"] .band:not(.band-cta) {
+  padding-inline: 0;
+  background: none;
+  border-block: 1px solid var(--line);
+  border-radius: 0;
+}
+html[data-style="classico"] .hero h1 { font-weight: 500; letter-spacing: 0.01em; }
+html[data-style="classico"] .testimonial {
+  background: none;
+  border-left-width: 2px;
+  border-radius: 0;
+  font-style: italic;
+}
+html[data-style="classico"] .testimonial figcaption { font-style: normal; }
+html[data-style="classico"] .site-footer { border-top: 4px double var(--detail); }
+
+/* ── Logo: typographic monogram instead of the image ─────── */
+/* The image stays in the accessibility tree (it names the home link);
+   it is only hidden visually. */
+html[data-logo="monograma"] .brand :is(picture, img) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+html[data-logo="monograma"] .brand::before {
+  content: "I&J" / "";
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── The panel itself: fixed neutral colours, unaffected by themes ── */
+.theme-panel {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  max-width: calc(100vw - 2rem);
+  font: 14px/1.4 system-ui, sans-serif;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px solid #888;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.18);
+}
+.theme-panel summary {
+  padding: 0.6rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.theme-panel form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  padding: 0 0.9rem 0.9rem;
+}
+.theme-panel label { font-weight: 600; }
+.theme-panel select,
+.theme-panel button {
+  min-height: 2.25rem;
+  padding: 0.25rem 0.5rem;
+  font: inherit;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px solid #666;
+  border-radius: 6px;
+}
+.theme-panel button { cursor: pointer; }
+.theme-panel .theme-actions {
+  display: flex;
+  gap: 0.5rem;
+  grid-column: 1 / -1;
+}
+.theme-panel output { grid-column: 1 / -1; font-size: 12px; color: #444; }
+.theme-panel :focus-visible { outline: 3px solid #1a5fb4; outline-offset: 2px; }

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cronómetro de contrações · Inês &amp; Joana</title>
+    <meta name="description" content="Regista a duração e a frequência das contrações durante o trabalho de parto e vê o padrão. Valores indicativos, a confirmar com a tua parteira.">
+    <link rel="canonical" href="https://inesejoana.pt/ferramentas/cronometro-de-contracoes/">
+    <meta property="og:url" content="https://inesejoana.pt/ferramentas/cronometro-de-contracoes/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Inês &amp; Joana">
+    <meta property="og:title" content="Cronómetro de contrações · Inês &amp; Joana">
+    <meta property="og:description" content="Regista a duração e a frequência das contrações durante o trabalho de parto e vê o padrão. Valores indicativos, a confirmar com a tua parteira.">
+    <meta property="og:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cronómetro de contrações · Inês &amp; Joana">
+    <meta name="twitter:description" content="Regista a duração e a frequência das contrações durante o trabalho de parto e vê o padrão. Valores indicativos, a confirmar com a tua parteira.">
+    <meta name="twitter:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta name="twitter:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/theme-preview/themes.css">
+    <script src="/assets/theme-preview/theme-preview.js"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Inês & Joana","description":"Inês & Joana — parteiras no Porto. Acompanhamento na gravidez, parto e pós-parto, ao domicílio, na Casa de Saúde da Boavista e no Hospital da Póvoa.","url":"https://inesejoana.pt/","image":"https://inesejoana.pt/assets/social/share.png","email":"geral@inesejoana.pt","telephone":["+351963812244","+351916740430"],"areaServed":{"@type":"City","name":"Porto"}}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <a class="brand" href="/">
+        <picture><source type="image/avif" srcset="/assets/img/-w5NW_ZTJW-56.avif 56w, /assets/img/-w5NW_ZTJW-112.avif 112w" sizes="56px"><source type="image/webp" srcset="/assets/img/-w5NW_ZTJW-56.webp 56w, /assets/img/-w5NW_ZTJW-112.webp 112w" sizes="56px"><img loading="eager" decoding="async" src="/assets/img/-w5NW_ZTJW-56.png" alt="Inês &amp; Joana" width="112" height="109" srcset="/assets/img/-w5NW_ZTJW-56.png 56w, /assets/img/-w5NW_ZTJW-112.png 112w" sizes="56px"></picture>
+        <span aria-hidden="true">Inês &amp; Joana</span>
+      </a>
+      <nav class="site-nav" aria-label="Menu principal">
+        <ul>
+          
+          <li>
+            <a href="/">Home</a>
+          </li>
+          
+          <li>
+            <a href="/sobre-nos/">Sobre nós</a>
+          </li>
+          
+          <li>
+            <a href="/servicos/">Serviços</a>
+          </li>
+          
+          <li>
+            <a href="/produtos/">Produtos</a>
+          </li>
+          
+          <li>
+            <a href="/informacao-util/">Informação útil</a>
+          </li>
+          
+          <li>
+            <a href="/ferramentas/">Ferramentas</a>
+          </li>
+          
+          <li>
+            <a href="/testemunhos/">Testemunhos</a>
+          </li>
+          
+          <li>
+            <a href="/contactos/">Contacto</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <a class="cta" href="/contactos/">Marcar consulta</a>
+    </header>
+
+    <main id="main">
+      <h1>Cronómetro de contrações</h1>
+<p>Marca o início e o fim de cada contração e vê o padrão a formar-se: quanto
+  dura cada uma e de quanto em quanto tempo chegam. É útil para descreveres o
+  que estás a sentir quando falares com a tua parteira.</p>
+<div id="contraction-timer" class="calculator" hidden="">
+  <p id="timer-status" class="timer-status" aria-live="polite">Pronta a começar.</p>
+  <div class="timer-controls">
+    <button type="button" id="timer-toggle" data-state="idle">Começar contração</button>
+    <button type="button" id="timer-reset" hidden="">Recomeçar</button>
+  </div>
+  <div id="timer-summary" class="calculator-result" aria-live="polite" hidden="">
+    <p>Nas últimas <strong data-field="window"></strong> contrações:</p>
+    <p>Duração média: <strong data-field="average-duration"></strong></p>
+    <p>Frequência média (início a início): <strong data-field="average-interval"></strong></p>
+    <p class="disclaimer">Valores indicativos — a confirmar com a tua parteira.</p>
+  </div>
+  <table id="timer-history" class="timer-history" hidden="">
+    <caption>Contrações registadas</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Início</th>
+        <th scope="col">Duração</th>
+        <th scope="col">Intervalo</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <template id="timer-row-template">
+    <tr>
+      <td data-field="index"></td>
+      <td data-field="start"></td>
+      <td data-field="duration"></td>
+      <td data-field="interval"></td>
+    </tr>
+  </template>
+</div>
+<noscript>
+  <p class="note">O cronómetro precisa de JavaScript, que está desligado no teu
+    navegador. Podes cronometrar à mão, como explicamos a seguir.</p>
+</noscript>
+<h2>Como funciona</h2>
+<p>Uma contração tem duas medidas. A <strong>duração</strong> é o tempo desde
+  que a contração começa até acabar. A <strong>frequência</strong> conta-se do
+  início de uma contração ao início da seguinte — não do fim de uma ao início
+  da outra. Por isso, se as contrações começam de cinco em cinco minutos, a
+  frequência é de cinco minutos, mesmo que cada uma dure um minuto.</p>
+<p>Para cronometrar à mão, aponta a hora a que cada contração começa e a que
+  acaba. A duração é a diferença entre as duas; a frequência é o tempo entre o
+  início de uma e o início da próxima. Olha para as últimas cinco ou seis
+  contrações, não para uma só: o que interessa é o padrão.</p>
+<p>Uma regra conhecida é a <strong>5-1-1</strong>: contrações de cinco em cinco
+  minutos, com cada uma a durar cerca de um minuto, durante pelo menos uma
+  hora. Mas cada parto é diferente — estes valores são indicativos. Em caso de
+  dúvida, ou se perderes líquido, sangrares ou sentires menos o bebé a mexer,
+  liga à tua parteira.</p>
+<p>Valores indicativos — a confirmar com a tua parteira.</p>
+<script type="module" src="/assets/js/contraction-timer-ui.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+      <address class="footer-contacts">
+        <a href="mailto:geral@inesejoana.pt">geral@inesejoana.pt</a>
+        <a href="tel:+351963812244">Inês · 963 812 244</a>
+        <a href="tel:+351916740430">Joana · 916 740 430</a>
+      </address>
+      <nav aria-label="Rodapé">
+        <ul>
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/sobre-nos/">Sobre nós</a></li>
+          
+          <li><a href="/servicos/">Serviços</a></li>
+          
+          <li><a href="/produtos/">Produtos</a></li>
+          
+          <li><a href="/informacao-util/">Informação útil</a></li>
+          
+          <li><a href="/ferramentas/">Ferramentas</a></li>
+          
+          <li><a href="/testemunhos/">Testemunhos</a></li>
+          
+          <li><a href="/contactos/">Contacto</a></li>
+          
+          <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; 2026 Inês &amp; Joana</p>
+    </footer>
+  </body>
+</html>

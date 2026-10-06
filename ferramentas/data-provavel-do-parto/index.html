@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora da data provável do parto · Inês &amp; Joana</title>
+    <meta name="description" content="Calcula a data provável do parto (DPP) e a idade gestacional a partir da DUM, da data de concepção ou da ecografia do 1.º trimestre. Valor indicativo, a confirmar com a tua parteira.">
+    <link rel="canonical" href="https://inesejoana.pt/ferramentas/data-provavel-do-parto/">
+    <meta property="og:url" content="https://inesejoana.pt/ferramentas/data-provavel-do-parto/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Inês &amp; Joana">
+    <meta property="og:title" content="Calculadora da data provável do parto · Inês &amp; Joana">
+    <meta property="og:description" content="Calcula a data provável do parto (DPP) e a idade gestacional a partir da DUM, da data de concepção ou da ecografia do 1.º trimestre. Valor indicativo, a confirmar com a tua parteira.">
+    <meta property="og:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadora da data provável do parto · Inês &amp; Joana">
+    <meta name="twitter:description" content="Calcula a data provável do parto (DPP) e a idade gestacional a partir da DUM, da data de concepção ou da ecografia do 1.º trimestre. Valor indicativo, a confirmar com a tua parteira.">
+    <meta name="twitter:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta name="twitter:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/theme-preview/themes.css">
+    <script src="/assets/theme-preview/theme-preview.js"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Inês & Joana","description":"Inês & Joana — parteiras no Porto. Acompanhamento na gravidez, parto e pós-parto, ao domicílio, na Casa de Saúde da Boavista e no Hospital da Póvoa.","url":"https://inesejoana.pt/","image":"https://inesejoana.pt/assets/social/share.png","email":"geral@inesejoana.pt","telephone":["+351963812244","+351916740430"],"areaServed":{"@type":"City","name":"Porto"}}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <a class="brand" href="/">
+        <picture><source type="image/avif" srcset="/assets/img/-w5NW_ZTJW-56.avif 56w, /assets/img/-w5NW_ZTJW-112.avif 112w" sizes="56px"><source type="image/webp" srcset="/assets/img/-w5NW_ZTJW-56.webp 56w, /assets/img/-w5NW_ZTJW-112.webp 112w" sizes="56px"><img loading="eager" decoding="async" src="/assets/img/-w5NW_ZTJW-56.png" alt="Inês &amp; Joana" width="112" height="109" srcset="/assets/img/-w5NW_ZTJW-56.png 56w, /assets/img/-w5NW_ZTJW-112.png 112w" sizes="56px"></picture>
+        <span aria-hidden="true">Inês &amp; Joana</span>
+      </a>
+      <nav class="site-nav" aria-label="Menu principal">
+        <ul>
+          
+          <li>
+            <a href="/">Home</a>
+          </li>
+          
+          <li>
+            <a href="/sobre-nos/">Sobre nós</a>
+          </li>
+          
+          <li>
+            <a href="/servicos/">Serviços</a>
+          </li>
+          
+          <li>
+            <a href="/produtos/">Produtos</a>
+          </li>
+          
+          <li>
+            <a href="/informacao-util/">Informação útil</a>
+          </li>
+          
+          <li>
+            <a href="/ferramentas/">Ferramentas</a>
+          </li>
+          
+          <li>
+            <a href="/testemunhos/">Testemunhos</a>
+          </li>
+          
+          <li>
+            <a href="/contactos/">Contacto</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <a class="cta" href="/contactos/">Marcar consulta</a>
+    </header>
+
+    <main id="main">
+      <h1>Calculadora da data provável do parto</h1>
+<p>Descobre a tua data provável do parto (DPP) e a tua idade gestacional
+  hoje, a partir do primeiro dia da tua última menstruação (DUM), da data
+  de concepção, ou da idade gestacional medida na ecografia do 1.º trimestre.</p>
+<form id="due-date-calculator" class="calculator" hidden="" novalidate="">
+  <fieldset>
+    <legend>Calcular a partir de</legend>
+    <label for="from-last-period"><input type="radio" id="from-last-period" name="from" value="lastPeriod" checked=""> Data da última menstruação (DUM)</label>
+    <label for="from-conception"><input type="radio" id="from-conception" name="from" value="conception"> Data de concepção</label>
+    <label for="from-ultrasound"><input type="radio" id="from-ultrasound" name="from" value="ultrasound"> Idade gestacional por ecografia do 1.º trimestre</label>
+  </fieldset>
+  <label for="start-date">Primeiro dia da última menstruação (DUM)</label>
+  <input type="date" id="start-date" name="date" required="" aria-describedby="start-date-error">
+  <p id="start-date-error" class="field-error" aria-live="polite"></p>
+  <fieldset id="ultrasound-age" hidden="">
+    <legend>Idade gestacional medida na ecografia</legend>
+    <label for="ultrasound-weeks">Semanas</label>
+    <input type="number" id="ultrasound-weeks" name="weeks" inputmode="numeric" min="11" max="13" step="1" aria-describedby="ultrasound-age-error">
+    <label for="ultrasound-days">Dias</label>
+    <input type="number" id="ultrasound-days" name="days" inputmode="numeric" min="0" max="6" step="1" aria-describedby="ultrasound-age-error">
+    <p id="ultrasound-age-error" class="field-error" aria-live="polite"></p>
+  </fieldset>
+  <button type="submit">Calcular</button>
+</form>
+<div id="due-date-result" class="calculator-result" aria-live="polite"></div>
+<template id="due-date-result-template">
+  <p>Data provável do parto: <strong data-field="due-date"></strong></p>
+  <p>Idade gestacional hoje: <strong data-field="gestational-age"></strong></p>
+  <p class="disclaimer">Valor indicativo — a confirmar com a tua parteira.</p>
+</template>
+<noscript>
+  <p class="note">A calculadora precisa de JavaScript, que está desligado no
+    teu navegador. Podes fazer a conta à mão, como explicamos a seguir.</p>
+</noscript>
+<h2>Como se calcula</h2>
+<p>A DPP conta-se a partir do primeiro dia da última menstruação (DUM): soma
+  280 dias, ou seja, 40 semanas. Se souberes a data de concepção, soma-lhe
+  266 dias (38 semanas). A idade gestacional também se conta a partir da DUM,
+  em semanas e dias.</p>
+<p>A ecografia do 1.º trimestre é a forma mais fiável de datar a gravidez.
+  Ela mede uma idade gestacional (em semanas e dias) na data do exame. A partir
+  daí estima-se a DUM — recua-se, da data da ecografia, a idade gestacional
+  medida — e soma-se-lhe 280 dias para obter a DPP. Esta datação só faz sentido
+  no 1.º trimestre, entre as 11+0 e as 13+6 semanas.</p>
+<p>Por exemplo, com a DUM a 1 de janeiro de 2026, a DPP é 8 de outubro de
+  2026. Com a concepção a 15 de janeiro de 2026, a DPP é a mesma: 8 de outubro
+  de 2026. E uma ecografia a 1 de abril de 2026 que meça 12 semanas e 6 dias
+  recua a DUM até 1 de janeiro de 2026, portanto a DPP volta a ser 8 de outubro
+  de 2026. A 1 de abril de 2026, a idade gestacional seria de 12 semanas e
+  6 dias.</p>
+<p>Já não calculamos a DPP a partir de uma DPP «já conhecida»: se já a
+  conheces, não há nada a calcular.</p>
+<p>A DPP é uma estimativa: poucos bebés nascem exatamente nesse dia. Valor
+  indicativo — a confirmar com a tua parteira.</p>
+<script type="module" src="/assets/js/due-date-calculator.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+      <address class="footer-contacts">
+        <a href="mailto:geral@inesejoana.pt">geral@inesejoana.pt</a>
+        <a href="tel:+351963812244">Inês · 963 812 244</a>
+        <a href="tel:+351916740430">Joana · 916 740 430</a>
+      </address>
+      <nav aria-label="Rodapé">
+        <ul>
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/sobre-nos/">Sobre nós</a></li>
+          
+          <li><a href="/servicos/">Serviços</a></li>
+          
+          <li><a href="/produtos/">Produtos</a></li>
+          
+          <li><a href="/informacao-util/">Informação útil</a></li>
+          
+          <li><a href="/ferramentas/">Ferramentas</a></li>
+          
+          <li><a href="/testemunhos/">Testemunhos</a></li>
+          
+          <li><a href="/contactos/">Contacto</a></li>
+          
+          <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; 2026 Inês &amp; Joana</p>
+    </footer>
+  </body>
+</html>

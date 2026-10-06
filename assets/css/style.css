@@ -1,0 +1,703 @@
+/*
+ * Inês & Joana. The brand palette is the live WordPress (Blocksy) palette,
+ * with the logo violet as the accent. Contrast (WCAG 2.2 AA, checked):
+ *   --text on --bg 6.55, --heading on --bg 15.7, --accent on --bg 6.26,
+ *   --accent on --soft 5.40, white on --accent 6.48, white on --accent-dark 8.54,
+ *   --footer-text on --heading 13.5, --focus-on-dark on --heading 9.38.
+ * Mobile-first: base rules target phones, min-width queries widen.
+ */
+:root {
+  --accent: #5e3fde;        /* logo violet (palette 2) */
+  --accent-dark: #4a2fc0;   /* hover / pressed */
+  --accent-tint: #ede8fd;   /* soft violet surface */
+  --heading: #102136;       /* palette 4 */
+  --text: #4d5d6d;          /* palette 3 */
+  --line: #e7ebee;          /* palette 5 */
+  --soft: #f3f5f7;          /* palette 6: section bands */
+  --bg: #fbfbfc;            /* palette 7 */
+  --surface: #ffffff;
+  --footer-text: #e7ebee;
+  --focus-on-dark: #c9bcff;
+  --maxw: 68rem;
+  --detail: var(--accent);  /* decorative rules (testimonial edge) */
+  --radius: 14px;
+  --radius-sm: 8px;         /* form fields */
+  --radius-pill: 999px;     /* buttons, nav links, chips */
+  --target: 2.75rem;        /* 44px: comfortable touch target */
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { color: var(--accent-dark); }
+
+/* Visible focus for every interactive element (keyboard only). */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--heading);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); margin: 0 0 1rem; }
+h2 { font-size: clamp(1.4rem, 4vw, 1.75rem); margin: 2rem 0 0.75rem; }
+h3 { font-size: 1.2rem; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  color: var(--accent);
+  border-radius: var(--radius);
+}
+
+/* Header: logo, then the nav. The nav is plain links that wrap on narrow
+   screens, so it needs no JavaScript and no hidden menu. */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: var(--target);
+  margin-right: auto;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--heading);
+  text-decoration: none;
+}
+.brand img { width: 3.5rem; height: auto; }
+
+/* Own row below logo + CTA at every width: seven items never fit beside them. */
+.site-nav { order: 3; flex-basis: 100%; }
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 0 0.75rem;
+  border-radius: var(--radius-pill);
+  color: var(--heading);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.site-nav a:hover { background: var(--soft); color: var(--accent-dark); }
+.site-nav a[aria-current="page"] {
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Buttons and the header CTA. */
+.btn,
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--target);
+  padding: 0 1.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  text-decoration: none;
+}
+.cta,
+.btn-primary { background: var(--accent); color: #fff; }
+.cta:hover,
+.btn-primary:hover { background: var(--accent-dark); color: #fff; }
+.btn-secondary {
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+.btn-secondary:hover { background: var(--accent-tint); color: var(--accent-dark); }
+
+/* Main content */
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+main p,
+main li { max-width: 68ch; }
+
+.lead { font-size: 1.2rem; }
+
+/* Hero */
+.hero { padding: 2rem 0 1.5rem; }
+.hero .tagline {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--accent);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 40rem) {
+  .hero { padding: 4rem 0 3rem; text-align: center; }
+  .hero p { margin-inline: auto; }
+  .hero .actions { justify-content: center; }
+}
+
+/* Section bands */
+.band {
+  margin: 2rem 0;
+  padding: 1.5rem 1.25rem;
+  background: var(--soft);
+  border-radius: var(--radius);
+}
+.band > h2:first-child { margin-top: 0; }
+.band-cta { background: var(--accent-tint); }
+@media (min-width: 40rem) {
+  .band { padding: 2rem; }
+}
+
+/* Lists of phases and birth settings: chips that read as a list. */
+.phases,
+.settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.phases a,
+.settings li {
+  /* inline-block, not flex: flex would drop the space in "Na <strong>…". */
+  display: inline-block;
+  min-height: var(--target);
+  padding: 0.55rem 1rem;
+  line-height: 1.6;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+}
+.settings strong { color: var(--heading); }
+.phases a { font-weight: 600; text-decoration: none; }
+
+/* Sobre nós: one column on phones, two side by side when there is room. */
+.people { display: grid; gap: 1.5rem; }
+.person {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.person > h2:first-child { margin-top: 0; }
+.person ul { padding-left: 1.2rem; }
+.portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+@media (min-width: 52rem) {
+  .people { grid-template-columns: 1fr 1fr; }
+}
+
+/* Photos side by side when there is room (Home). */
+.gallery { display: grid; gap: 1rem; margin: 1rem 0; }
+.gallery img { width: 100%; border-radius: var(--radius); }
+@media (min-width: 40rem) {
+  .gallery { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+/* Videos scale with the column, keeping their aspect ratio. */
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: #000;
+}
+
+/* Contact links in running text get a touch-sized hit area. */
+main a[href^="tel:"],
+main a[href^="mailto:"] {
+  display: inline-block;
+  padding-block: 0.6rem;
+}
+
+/* Service / product groups */
+.service-group { margin-bottom: 2rem; }
+.service-group h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--line);
+}
+.service-group ul { list-style: none; padding: 0; }
+.service-figure { margin: 0; }
+.service-figure figcaption { margin-top: 0.4rem; font-size: 0.875rem; }
+/* Same 3:2 frame for every phase photo, so a tall original doesn't dominate. */
+.service-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.service { margin: 1.25rem 0; }
+.service h3 { margin-bottom: 0.25rem; }
+.service p { margin: 0.25rem 0; }
+.service-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 0.75rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+}
+.service-meta dt { font-weight: 600; }
+.service-meta dd { margin: 0; }
+
+/* Produtos: one card per product */
+.products {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 52rem) {
+  .products { grid-template-columns: 1fr 1fr; }
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+.product img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #fff;
+  border-radius: var(--radius);
+}
+.product h2 { font-size: 1.2rem; margin: 1rem 0 0.25rem; }
+.product-description p { margin: 0.4rem 0; }
+.product-order {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* Informação útil: a phase heading, then one native disclosure per group. */
+.resource-phase { margin-bottom: 2rem; }
+.resource-phase h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--line);
+}
+.resource-group { border-bottom: 1px solid var(--line); }
+.resource-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: var(--target);
+  padding: 0.4rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+.resource-group > summary::-webkit-details-marker { display: none; }
+/* Decorative +/− marker; the empty alt text keeps screen readers quiet. */
+.resource-group > summary::before {
+  content: "+" / "";
+  flex: none;
+  width: 1.2em;
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+}
+.resource-group[open] > summary::before { content: "−" / ""; }
+.resource-group h3 { margin: 0; font-size: 1.1rem; }
+.resource-group ul { margin: 0.25rem 0; padding-left: 1.4rem; }
+.resource-group > ul { margin-bottom: 1rem; }
+.resource-group li { margin: 0.2rem 0; overflow-wrap: anywhere; }
+
+/* Text for screen readers only (e.g. which product an order link is for). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Testimonials */
+.testimonial {
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border-left: 4px solid var(--detail);
+  border-radius: var(--radius);
+}
+.testimonial blockquote {
+  margin: 0;
+}
+.testimonial figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* Contact form */
+form.contact {
+  display: grid;
+  gap: 1rem;
+  max-width: 36rem;
+}
+form.contact label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--heading);
+}
+form.contact input,
+form.contact textarea {
+  min-height: var(--target);
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--heading);
+  background: var(--surface);
+  /* #4d5d6d border: 6.2:1 against the page, meets non-text contrast. */
+  border: 1px solid var(--text);
+  border-radius: var(--radius-sm);
+}
+form.contact button {
+  justify-self: start;
+  min-height: var(--target);
+  padding: 0 1.5rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+form.contact button:hover { background: var(--accent-dark); }
+form.contact .form-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+form.contact label.consent {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.6rem;
+}
+form.contact label.consent input {
+  width: 1.5rem;
+  height: 1.5rem;
+  min-height: 0;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  accent-color: var(--accent);
+}
+
+/* Ferramentas hub */
+.tools { list-style: none; padding: 0; }
+.tool {
+  margin: 1.25rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.tool h2 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+.tool p { margin: 0; }
+
+/* DPP calculator. Hidden until its script runs (progressive enhancement). */
+form.calculator {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 36rem;
+  margin: 1.5rem 0;
+}
+form.calculator fieldset {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+form.calculator legend { padding: 0 0.25rem; font-weight: 600; color: var(--heading); }
+form.calculator fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: var(--target);
+}
+form.calculator input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--accent);
+}
+form.calculator > label { font-size: 0.95rem; color: var(--heading); }
+form.calculator input[type="date"] {
+  justify-self: start;
+  min-height: var(--target);
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--heading);
+  background: var(--surface);
+  /* #4d5d6d border: 6.2:1 against the page, meets non-text contrast. */
+  border: 1px solid var(--text);
+  border-radius: var(--radius-sm);
+}
+form.calculator input[aria-invalid="true"] { border: 2px solid #b3261e; }
+/* #b3261e on --bg: 6.3:1. Empty until there is an error. */
+.field-error { margin: 0; color: #b3261e; font-weight: 600; }
+.field-error:empty { display: none; }
+form.calculator button {
+  justify-self: start;
+  min-height: var(--target);
+  padding: 0 1.5rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+form.calculator button:hover { background: var(--accent-dark); }
+.calculator-result:not(:empty) {
+  max-width: 36rem;
+  padding: 1rem 1.5rem;
+  background: var(--accent-tint);
+  border-radius: var(--radius);
+}
+.calculator-result strong { color: var(--heading); }
+.calculator-result .disclaimer { font-size: 0.9rem; }
+/* The .ics link and the PDF/print button sit on one row under the list. */
+.appointment-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+.appointment-downloads .download-pdf {
+  min-height: var(--target);
+  padding: 0 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.appointment-downloads .download-pdf:hover { background: var(--accent-dark); }
+
+/* Print-only sheet: hidden on screen, shown only when printing (below). */
+#appointment-print { display: none; }
+
+/* Contraction timer. Hidden until its script runs (progressive enhancement);
+   the rule below covers both the form and the div .calculator shells. */
+.calculator[hidden] { display: none; }
+.timer-status { font-weight: 600; color: var(--heading); }
+.timer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.timer-controls button {
+  min-height: var(--target);
+  padding: 0 1.5rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.timer-controls button:hover { background: var(--accent-dark); }
+.timer-controls button[hidden] { display: none; }
+.timer-controls button[data-state="running"] { background: var(--accent-dark); }
+/* The "Recomeçar" button is secondary: an outline, not a filled pill. */
+#timer-reset {
+  color: var(--accent-dark);
+  background: transparent;
+  border: 1px solid var(--text);
+}
+#timer-reset:hover { color: #fff; background: var(--accent-dark); }
+.timer-history {
+  width: 100%;
+  max-width: 36rem;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.timer-history[hidden] { display: none; }
+.timer-history caption { text-align: left; font-weight: 600; color: var(--heading); margin-bottom: 0.5rem; }
+.timer-history th,
+.timer-history td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--line); }
+.timer-history th { color: var(--heading); }
+#timer-summary[hidden] { display: none; }
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 2rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--footer-text);
+  background: var(--heading);
+}
+.site-footer > * {
+  max-width: var(--maxw);
+  margin-inline: auto;
+}
+.site-footer a { color: var(--footer-text); }
+.site-footer a:hover { color: #fff; }
+.site-footer :focus-visible { outline-color: var(--focus-on-dark); }
+.footer-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  font-style: normal;
+}
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  margin: 1rem auto;
+  padding: 0;
+  list-style: none;
+}
+/* Footer links are touch-sized too. */
+.footer-contacts a,
+.site-footer ul a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+}
+.footer-legal { margin-bottom: 0; }
+
+/* Branded print sheet for the exam calendar (#29). The PDF route is
+   window.print() over this stylesheet — no PDF library, no new build step
+   (ADR-0003). When printing we hide the whole page and reveal only
+   #appointment-print, which the script fills from the same schedule as the
+   on-page list and the .ics, so the printed dates and notes can't drift. */
+@media print {
+  /* Hide the on-screen chrome and the live tool; print only the sheet. */
+  .site-header,
+  .site-nav,
+  .cta,
+  .skip-link,
+  .site-footer,
+  main > *:not(#appointment-print) {
+    display: none !important;
+  }
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 11pt;
+  }
+  main { padding: 0; margin: 0; }
+
+  #appointment-print {
+    display: block !important;
+    max-width: none;
+    color: var(--text);
+  }
+  #appointment-print .print-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  #appointment-print .print-header img { width: 56px; height: auto; }
+  #appointment-print .print-header h2 {
+    margin: 0;
+    font-size: 15pt;
+    color: var(--heading);
+  }
+  #appointment-print .appointment-list {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+  }
+  #appointment-print .appointment-list li {
+    margin-bottom: 0.6rem;
+    /* Keep each exam together across page breaks. */
+    break-inside: avoid;
+  }
+  #appointment-print .appointment-list strong {
+    display: block;
+    color: var(--heading);
+  }
+  #appointment-print .print-weeks,
+  #appointment-print .print-dates,
+  #appointment-print .print-note {
+    display: block;
+  }
+  #appointment-print .print-weeks { font-weight: 600; }
+  #appointment-print .print-dates { color: var(--accent-dark); }
+  #appointment-print .print-note { font-size: 10pt; }
+  #appointment-print .print-norms,
+  #appointment-print .print-disclaimer { font-size: 9.5pt; }
+  #appointment-print .print-footer {
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--line);
+    font-size: 9pt;
+    color: var(--text);
+  }
+  #appointment-print .print-footer p { margin: 0; }
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Que serviço preciso? · Inês &amp; Joana</title>
+    <meta name="description" content="Responde a uma pergunta sobre a tua situação e vê qual o serviço que melhor se adequa, com um atalho para marcar consulta. Valores indicativos, a confirmar com a tua parteira.">
+    <link rel="canonical" href="https://inesejoana.pt/ferramentas/que-servico-preciso/">
+    <meta property="og:url" content="https://inesejoana.pt/ferramentas/que-servico-preciso/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Inês &amp; Joana">
+    <meta property="og:title" content="Que serviço preciso? · Inês &amp; Joana">
+    <meta property="og:description" content="Responde a uma pergunta sobre a tua situação e vê qual o serviço que melhor se adequa, com um atalho para marcar consulta. Valores indicativos, a confirmar com a tua parteira.">
+    <meta property="og:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Que serviço preciso? · Inês &amp; Joana">
+    <meta name="twitter:description" content="Responde a uma pergunta sobre a tua situação e vê qual o serviço que melhor se adequa, com um atalho para marcar consulta. Valores indicativos, a confirmar com a tua parteira.">
+    <meta name="twitter:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta name="twitter:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/theme-preview/themes.css">
+    <script src="/assets/theme-preview/theme-preview.js"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Inês & Joana","description":"Inês & Joana — parteiras no Porto. Acompanhamento na gravidez, parto e pós-parto, ao domicílio, na Casa de Saúde da Boavista e no Hospital da Póvoa.","url":"https://inesejoana.pt/","image":"https://inesejoana.pt/assets/social/share.png","email":"geral@inesejoana.pt","telephone":["+351963812244","+351916740430"],"areaServed":{"@type":"City","name":"Porto"}}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <a class="brand" href="/">
+        <picture><source type="image/avif" srcset="/assets/img/-w5NW_ZTJW-56.avif 56w, /assets/img/-w5NW_ZTJW-112.avif 112w" sizes="56px"><source type="image/webp" srcset="/assets/img/-w5NW_ZTJW-56.webp 56w, /assets/img/-w5NW_ZTJW-112.webp 112w" sizes="56px"><img loading="eager" decoding="async" src="/assets/img/-w5NW_ZTJW-56.png" alt="Inês &amp; Joana" width="112" height="109" srcset="/assets/img/-w5NW_ZTJW-56.png 56w, /assets/img/-w5NW_ZTJW-112.png 112w" sizes="56px"></picture>
+        <span aria-hidden="true">Inês &amp; Joana</span>
+      </a>
+      <nav class="site-nav" aria-label="Menu principal">
+        <ul>
+          
+          <li>
+            <a href="/">Home</a>
+          </li>
+          
+          <li>
+            <a href="/sobre-nos/">Sobre nós</a>
+          </li>
+          
+          <li>
+            <a href="/servicos/">Serviços</a>
+          </li>
+          
+          <li>
+            <a href="/produtos/">Produtos</a>
+          </li>
+          
+          <li>
+            <a href="/informacao-util/">Informação útil</a>
+          </li>
+          
+          <li>
+            <a href="/ferramentas/">Ferramentas</a>
+          </li>
+          
+          <li>
+            <a href="/testemunhos/">Testemunhos</a>
+          </li>
+          
+          <li>
+            <a href="/contactos/">Contacto</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <a class="cta" href="/contactos/">Marcar consulta</a>
+    </header>
+
+    <main id="main">
+      <h1>Que serviço preciso?</h1>
+<p>Nem sempre é óbvio qual a consulta certa para o momento que estás a viver.
+  Escolhe a frase que melhor descreve a tua situação e sugerimos-te o serviço
+  que costuma encaixar — depois é só marcares consulta para confirmarmos
+  contigo.</p>
+<div id="service-chooser" class="calculator" hidden="">
+  <p>
+    <label for="situation">Qual destas frases te descreve melhor?</label>
+    <select id="situation">
+      <option value="">Escolhe uma situação…</option>
+    </select>
+  </p>
+  <div id="chooser-result" class="calculator-result" aria-live="polite" hidden="">
+    <p>Fase: <strong id="chooser-phase"></strong></p>
+    <p>O serviço que sugerimos:</p>
+    <ul id="chooser-services"></ul>
+    <p><a href="/contactos/">Marcar consulta</a></p>
+    <p class="disclaimer">Valores indicativos — a confirmar com a tua parteira.</p>
+  </div>
+</div>
+<noscript>
+  <p class="note">Este guia precisa de JavaScript, que está desligado no teu
+    navegador. Podes ver todos os serviços, agrupados por fase, na página
+    <a href="/servicos/">Serviços</a>, e escolher o que precisas.</p>
+</noscript>
+<h2>Como funciona</h2>
+<p>A escolha segue as fases do acompanhamento. Na <strong>gravidez</strong>, a
+  consulta de vigilância acompanha-te ao longo da gestação, e a preparação para
+  o parto e parentalidade ajuda-te a chegar ao parto com confiança. Para o
+  <strong>parto</strong>, acompanhamos na Casa de Saúde da Boavista, no Hospital
+  da Póvoa ou no teu domicílio — a decisão de onde e como é tua. No
+  <strong>pós-parto</strong>, há apoio à amamentação, consulta de sono e
+  laserterapia para a recuperação. E para a vida com o bebé a crescer, há a
+  introdução de alimentação complementar e a consultoria em fraldas
+  reutilizáveis.</p>
+<p>Se tiveres dúvidas sobre qual escolher, ou se a tua situação não encaixar em
+  nenhuma destas frases, marca uma <a href="/contactos/">consulta</a> e
+  conversamos: ajustamos o serviço àquilo de que realmente precisas.</p>
+<p>Valores indicativos — a confirmar com a tua parteira.</p>
+<script type="module" src="/assets/js/service-chooser-ui.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+      <address class="footer-contacts">
+        <a href="mailto:geral@inesejoana.pt">geral@inesejoana.pt</a>
+        <a href="tel:+351963812244">Inês · 963 812 244</a>
+        <a href="tel:+351916740430">Joana · 916 740 430</a>
+      </address>
+      <nav aria-label="Rodapé">
+        <ul>
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/sobre-nos/">Sobre nós</a></li>
+          
+          <li><a href="/servicos/">Serviços</a></li>
+          
+          <li><a href="/produtos/">Produtos</a></li>
+          
+          <li><a href="/informacao-util/">Informação útil</a></li>
+          
+          <li><a href="/ferramentas/">Ferramentas</a></li>
+          
+          <li><a href="/testemunhos/">Testemunhos</a></li>
+          
+          <li><a href="/contactos/">Contacto</a></li>
+          
+          <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; 2026 Inês &amp; Joana</p>
+    </footer>
+  </body>
+</html>

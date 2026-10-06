@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acompanhamento semanal da gravidez · Inês &amp; Joana</title>
+    <meta name="description" content="Vê em que semana da gravidez estás a partir da DPP ou da DUM e o que costuma estar a acontecer nessa semana. Informação indicativa, a confirmar com a tua parteira.">
+    <link rel="canonical" href="https://inesejoana.pt/ferramentas/acompanhamento-semanal/">
+    <meta property="og:url" content="https://inesejoana.pt/ferramentas/acompanhamento-semanal/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="Inês &amp; Joana">
+    <meta property="og:title" content="Acompanhamento semanal da gravidez · Inês &amp; Joana">
+    <meta property="og:description" content="Vê em que semana da gravidez estás a partir da DPP ou da DUM e o que costuma estar a acontecer nessa semana. Informação indicativa, a confirmar com a tua parteira.">
+    <meta property="og:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Acompanhamento semanal da gravidez · Inês &amp; Joana">
+    <meta name="twitter:description" content="Vê em que semana da gravidez estás a partir da DPP ou da DUM e o que costuma estar a acontecer nessa semana. Informação indicativa, a confirmar com a tua parteira.">
+    <meta name="twitter:image" content="https://inesejoana.pt/assets/social/share.png">
+    <meta name="twitter:image:alt" content="Logótipo Inês &amp; Joana — Parteiras no Porto">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/theme-preview/themes.css">
+    <script src="/assets/theme-preview/theme-preview.js"></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Inês & Joana","description":"Inês & Joana — parteiras no Porto. Acompanhamento na gravidez, parto e pós-parto, ao domicílio, na Casa de Saúde da Boavista e no Hospital da Póvoa.","url":"https://inesejoana.pt/","image":"https://inesejoana.pt/assets/social/share.png","email":"geral@inesejoana.pt","telephone":["+351963812244","+351916740430"],"areaServed":{"@type":"City","name":"Porto"}}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <a class="brand" href="/">
+        <picture><source type="image/avif" srcset="/assets/img/-w5NW_ZTJW-56.avif 56w, /assets/img/-w5NW_ZTJW-112.avif 112w" sizes="56px"><source type="image/webp" srcset="/assets/img/-w5NW_ZTJW-56.webp 56w, /assets/img/-w5NW_ZTJW-112.webp 112w" sizes="56px"><img loading="eager" decoding="async" src="/assets/img/-w5NW_ZTJW-56.png" alt="Inês &amp; Joana" width="112" height="109" srcset="/assets/img/-w5NW_ZTJW-56.png 56w, /assets/img/-w5NW_ZTJW-112.png 112w" sizes="56px"></picture>
+        <span aria-hidden="true">Inês &amp; Joana</span>
+      </a>
+      <nav class="site-nav" aria-label="Menu principal">
+        <ul>
+          
+          <li>
+            <a href="/">Home</a>
+          </li>
+          
+          <li>
+            <a href="/sobre-nos/">Sobre nós</a>
+          </li>
+          
+          <li>
+            <a href="/servicos/">Serviços</a>
+          </li>
+          
+          <li>
+            <a href="/produtos/">Produtos</a>
+          </li>
+          
+          <li>
+            <a href="/informacao-util/">Informação útil</a>
+          </li>
+          
+          <li>
+            <a href="/ferramentas/">Ferramentas</a>
+          </li>
+          
+          <li>
+            <a href="/testemunhos/">Testemunhos</a>
+          </li>
+          
+          <li>
+            <a href="/contactos/">Contacto</a>
+          </li>
+          
+        </ul>
+      </nav>
+      <a class="cta" href="/contactos/">Marcar consulta</a>
+    </header>
+
+    <main id="main">
+      <h1>Acompanhamento semanal da gravidez</h1>
+<p>Descobre em que semana da gravidez estás hoje e o que costuma estar a
+  acontecer nessa fase, a partir da tua data provável do parto (DPP) ou do
+  primeiro dia da última menstruação (DUM).</p>
+<form id="weekly-tracker" class="calculator" hidden="" novalidate="">
+  <fieldset>
+    <legend>Calcular a partir de</legend>
+    <label for="from-due-date"><input type="radio" id="from-due-date" name="from" value="dueDate" checked=""> DPP já conhecida</label>
+    <label for="from-last-period"><input type="radio" id="from-last-period" name="from" value="lastPeriod"> Data da última menstruação (DUM)</label>
+  </fieldset>
+  <label for="tracker-date">Data provável do parto (DPP)</label>
+  <input type="date" id="tracker-date" name="date" required="" aria-describedby="tracker-date-error">
+  <p id="tracker-date-error" class="field-error" aria-live="polite"></p>
+  <button type="submit">Ver a minha semana</button>
+</form>
+<div id="weekly-tracker-result" class="calculator-result" aria-live="polite"></div>
+<template id="weekly-tracker-result-template">
+  <p><strong data-field="heading"></strong></p>
+  <p data-field="trimester"></p>
+  <p data-field="text"></p>
+  <p class="disclaimer">Valores indicativos — a confirmar com a tua parteira.</p>
+</template>
+<noscript>
+  <p class="note">O acompanhamento semanal precisa de JavaScript, que está
+    desligado no teu navegador. Podes contar a tua semana à mão, como
+    explicamos a seguir, e ler o que costuma acontecer em cada fase.</p>
+</noscript>
+<h2>Como funciona</h2>
+<p>A idade gestacional conta-se a partir do primeiro dia da última
+  menstruação (DUM), em semanas e dias. Se souberes a DPP, a DUM foi 280 dias
+  (40 semanas) antes. Para saber a tua semana hoje, conta quantas semanas
+  completas passaram desde a DUM. Por exemplo, com a DUM a 1 de janeiro de
+  2026, a 1 de abril de 2026 estarias na semana 12.</p>
+<p>Depois é só ver o que costuma estar a acontecer nessa semana. Para dares
+  um sentido ao número, agrupamos a gravidez em três trimestres: o primeiro
+  vai até à semana 13, o segundo da 14 à 27, e o terceiro da 28 em diante,
+  até ao parto por volta da semana 40.</p>
+<h3>O que costuma acontecer, por fase</h3>
+<ul>
+  <li><strong>Semanas 1 a 4:</strong> a contagem começa na última
+    menstruação, por isso ainda não há bebé a crescer; a conceção acontece
+    por volta da semana 2 a 3.</li>
+  <li><strong>Semanas 5 a 8:</strong> o coração começa a bater e surgem os
+    primeiros esboços dos membros; as náuseas e o cansaço costumam ser mais
+    intensos.</li>
+  <li><strong>Semanas 9 a 13:</strong> o embrião passa a feto, com forma
+    humana reconhecível; faz-se a ecografia e os rastreios do primeiro
+    trimestre.</li>
+  <li><strong>Semanas 14 a 27:</strong> o segundo trimestre, muitas vezes o
+    mais confortável; a barriga nota-se, sentes os primeiros movimentos e
+    faz-se a ecografia morfológica por volta das 18 a 20 semanas.</li>
+  <li><strong>Semanas 28 a 36:</strong> o terceiro trimestre; o bebé ganha
+    peso, as consultas tornam-se mais frequentes e é boa altura para preparar
+    a mala da maternidade.</li>
+  <li><strong>Semanas 37 a 42:</strong> o bebé está de termo e pode nascer a
+    qualquer momento; passar a data provável sem o parto começar é comum.</li>
+</ul>
+<p>Esta é informação geral sobre o que costuma acontecer em cada fase, não um
+  diagnóstico nem uma avaliação da tua gravidez em concreto. Cada gravidez é
+  diferente. Valores indicativos — a confirmar com a tua parteira.</p>
+<script type="module" src="/assets/js/weekly-tracker-ui.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+      <address class="footer-contacts">
+        <a href="mailto:geral@inesejoana.pt">geral@inesejoana.pt</a>
+        <a href="tel:+351963812244">Inês · 963 812 244</a>
+        <a href="tel:+351916740430">Joana · 916 740 430</a>
+      </address>
+      <nav aria-label="Rodapé">
+        <ul>
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/sobre-nos/">Sobre nós</a></li>
+          
+          <li><a href="/servicos/">Serviços</a></li>
+          
+          <li><a href="/produtos/">Produtos</a></li>
+          
+          <li><a href="/informacao-util/">Informação útil</a></li>
+          
+          <li><a href="/ferramentas/">Ferramentas</a></li>
+          
+          <li><a href="/testemunhos/">Testemunhos</a></li>
+          
+          <li><a href="/contactos/">Contacto</a></li>
+          
+          <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; 2026 Inês &amp; Joana</p>
+    </footer>
+  </body>
+</html>
