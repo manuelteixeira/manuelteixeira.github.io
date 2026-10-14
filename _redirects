@@ -1,0 +1,18 @@
+# Cloudflare Pages redirects: "source target status", one rule per line.
+# Old WordPress URLs (#12) moved permanently to their pages on the new site.
+
+# WooCommerce shop → display-only Produtos catalogue
+/loja/              /produtos/                  301
+/produto/*          /produtos/                  301
+/carrinho/          /produtos/                  301
+/finalizar-compra/  /produtos/                  301
+/minha-conta/       /produtos/                  301
+
+# WordPress pages whose slug changed
+/privacy-policy-2/  /politica-de-privacidade/   301
+/about/             /sobre-nos/                 301
+/contact/           /contactos/                 301
+/video/             /sobre-nos/#video           301
+
+# The live nav links Testemunhos without a trailing slash (#6)
+/testemunhos        /testemunhos/               301
